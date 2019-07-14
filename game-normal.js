@@ -31,6 +31,66 @@ window.onload = function () {
 
     function startGame() {
         // TODO: 写开始新游戏后发生的事
+         resetScoreAndTime();
+        peep();
+
+        setTimeout(() => {
+            // TODO: 写当游戏时间结束后要发生的事
+        }, gameTime)
+    }
+ /**
+     * 初始化设置.
+     */
+    function resetScoreAndTime() {
+        // TODO: 写游戏的初始化设置
     }
 
+    /**
+     * 出洞.
+     */
+    function peep() {
+        const time = randomTime(200, 1000);
+        const hole = randomHole(holes);
+        comeOutAndStop(hole, time);
+    }
+
+    /**
+     * 随机生成地鼠出洞的停留时间. 该时间其实是[min, max]间的随机数.
+     *
+     * @param min 随机数的下界.
+     * @param max 随机数的上界.
+     * @returns {number}
+     */
+    function randomTime(min, max) {
+        // TODO: 写生成随机数的逻辑，
+        return 0;
+    }
+
+    /**
+     * 随机选择地鼠钻出的地洞，如果与上一个是相同地洞，则重新选择一个地洞.
+     *
+     * @param holes
+     * @returns {*}
+     */
+    function randomHole(holes) {
+        // TODO: 写地鼠随机选择钻出地洞的逻辑，如果与上一个是相同地洞，则重新选择一个地洞.
+        return null;
+    }
+
+    /**
+     * 地鼠出洞并停留相应时间，如果游戏时间未结束(timeUp)，继续出洞(peep).
+     *
+     * @param hole 地鼠所出地洞.
+     * @param time 地鼠停留时间.
+     */
+    function comeOutAndStop(hole, time) {
+        // TODO: 写地鼠出洞并停留相应时间，如果游戏时间未结束(timeUp)，继续出洞(peep).
+    }
+
+    /**
+     * 打地鼠。为每个moles添加点击事件，点击后分数显示+1，地鼠入洞。
+     */
+    moles.forEach(mole => mole.addEventListener('click', function (e) {
+        // TODO: 在这里写用户点击地鼠发生的事.
+    }));
 };
